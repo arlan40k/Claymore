@@ -8,6 +8,8 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
+
+// Jonathan was here!
 public class Claymore extends BasicGame {
 	Image background; 
 
