@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="20" tilewidth="31" tileheight="31">
+ <tileset firstgid="1" name="ClaymoreLvl1" tilewidth="31" tileheight="31" margin="1">
+  <image source="tiles.png" width="918" height="678"/>
+ </tileset>
+ <layer name="BackGround" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3SMQrAIBBE0b3/5TySaUM6dROG8B5MYSd+R1WN5rGvu4UeZ/TIokeW7hbz2+v/jh5Z9MiiRxY9sszbxuN8Mvasvp0m79r9+3pk0QAAAFh1AYhCdFdAHwAA
+  </data>
+ </layer>
+ <layer name="Floor" width="100" height="20">
+  <properties>
+   <property name="compression" value="gzip"/>
+   <property name="encoding" value="base64"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VQQqAMAwEwP7/h/Y1IuJBECqIZqUzkHvZpUlrAFCvVz+AE31k0UcWfWTRxzM9ZNhV93DM8vGkusplhj5SO6n+F3f3VXKGbxjllLDvZ+pjM8rb7f2WvAHgn1Zqwp51QB8AAA==
+  </data>
+ </layer>
+</map>

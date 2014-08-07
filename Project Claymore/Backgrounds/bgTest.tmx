@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="20" tilewidth="31" tileheight="31">
+ <tileset firstgid="1" name="ClaymoreLvl1" tilewidth="31" tileheight="31" margin="1">
+  <image source="../Desktop/Sprites/tiles.png" width="918" height="678"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt0cEJAAAIAzH3H9Fp/PoWBJEEboE2AgAAAIAuF2LOH/fZFACALwrnGiSf
+  </data>
+ </layer>
+</map>

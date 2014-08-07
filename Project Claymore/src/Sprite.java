@@ -16,30 +16,32 @@ public class Sprite extends Animation {
 		this.y = y;
 		
 	}
-	public void Motion(int delta, boolean checkLR, boolean checkUD ){
+	public void Motion(int delta, boolean checkR, boolean checkL, boolean checkUp ){
+		
 		
 		// Right and Left movement
-		if(checkLR){
-			if(x <= 600)
-				x = x + delta * .4f;
-			else if(bg_x < 3200 - 800)
-				bg_x = bg_x + delta *.4f;
+		if(checkR){
+			if(x <= 3200){
+				x = x + delta * .01f;
+				checkR = false;
+					bg_x += 0.01;
+			}
 			
-			
-		
-				
-		
 		}
-		else if(!checkLR)
-			if(x  >= 200)
-				x = x - delta * .4f;
-			else if(bg_x > 0)
-				bg_x = bg_x - delta * .4f;
-			
 		
 		
 		
-		// Down and Up movement
+		else if(checkL){
+			if(x  >= 200 ){
+				x = x - delta * .01f;
+				checkL = false;
+				bg_x -= 0.01f * delta;
+			}
+		}
+	}
+		
+		
+				// Down and Up movement
 		/*
 		if(checkUD)
 			y = y + delta * .04f;
@@ -51,7 +53,7 @@ public class Sprite extends Animation {
 		
 		
 		
-	}
+	
 	public void SpriteAnimation(){
 		
 	}
