@@ -2,13 +2,48 @@
 <map version="1.0" orientation="orthogonal" width="100" height="30" tilewidth="30" tileheight="30">
  <tileset firstgid="1" name="bob" tilewidth="30" tileheight="30">
   <image source="starry-cloudy-sky-14672-1920x1200.jpg" width="1920" height="1200"/>
+  <terraintypes>
+   <terrain name="Test" tile="-1"/>
+  </terraintypes>
+  <tile id="2" terrain=",,,0"/>
+  <tile id="65" terrain=",,,0"/>
+  <tile id="66" terrain="0,0,0,0"/>
+  <tile id="67" terrain="0,0,0,0"/>
+  <tile id="68" terrain="0,0,0,0"/>
+  <tile id="129" terrain=",0,0,"/>
+  <tile id="130" terrain="0,0,0,0"/>
+  <tile id="131" terrain="0,0,0,0"/>
+  <tile id="132" terrain="0,0,0,0"/>
+  <tile id="193" terrain=",,0,"/>
+  <tile id="194" terrain="0,0,0,0"/>
+  <tile id="195" terrain="0,0,0,0"/>
+  <tile id="196" terrain="0,0,0,0"/>
+  <tile id="197" terrain="0,,,"/>
+  <tile id="198" terrain="0,,,"/>
+  <tile id="199" terrain="0,,,0"/>
+  <tile id="200" terrain=",,,0"/>
+  <tile id="201" terrain=",,0,"/>
+  <tile id="257" terrain="0,,,0"/>
+  <tile id="263" terrain=",,0,0"/>
+  <tile id="264" terrain=",,,0"/>
+  <tile id="265" terrain="0,,,"/>
+  <tile id="322" terrain="0,0,,"/>
+  <tile id="323" terrain="0,0,,"/>
+  <tile id="324" terrain="0,,,"/>
+  <tile id="325" terrain="0,,,"/>
+  <tile id="326" terrain="0,,,"/>
+ </tileset>
+ <tileset firstgid="2561" name="SecondTest" tilewidth="30" tileheight="30">
+  <image source="../../../../Desktop/Sprites/tiles.png" width="918" height="678"/>
  </tileset>
  <layer name="Tile Layer 1" width="100" height="30">
   <data encoding="base64" compression="gzip">
-   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
+   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
   </data>
  </layer>
- <objectgroup name="Object Layer 1" width="100" height="30">
-  <object x="87" y="597" width="1022" height="119"/>
- </objectgroup>
+ <layer name="Tile Layer 2" width="100" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VMQrAIAwFUOeeqvc/VceCpJJgqx3eAzeJkE9iawAAAABEzuP5sFbf91E2mcOcvoczOchlXtS7UZ+ruZilmsx8ZO9V+i2X2MwcRHUq9fr3ub29XzI1zEjNF/s+yoS9Rv8S+9hV/yMPAACA9S70JYsL4C4AAA==
+  </data>
+ </layer>
 </map>

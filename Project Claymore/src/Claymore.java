@@ -54,7 +54,7 @@ public class Claymore extends BasicGame {
 		
 	@Override
 	public void init(GameContainer container) throws SlickException {
-		map = new  TiledMap("Backgrounds/bob.tmx");	
+		map = new  TiledMap("Backgrounds/BG.tmx");	
 		p1.sprite[0] = new Image("Sprites/StandAni1.png");
 		p1.sprite[1] = new Image("Sprites/StandAni2.png");
 		p1.sprite[2] = new Image("Sprites/StandAni3.png");
@@ -65,7 +65,7 @@ public class Claymore extends BasicGame {
 		dog2 = new YomaDog();
 		for(int indexX = 0; indexX < 100; indexX++){
 		for(int indexY = 0; indexY < 30; indexY++){
-		if(map.getTileId(indexX, indexY, 0) == 375  )
+		if(map.getTileId(indexX, indexY, 0) == 3894  )
 			collision[indexX][indexY] = true;
 			
 			
@@ -81,7 +81,7 @@ public class Claymore extends BasicGame {
 		//p1.update(delta);
 		//System.out.println(getTileProperty())
 		//System.out.println(map.getTileId(27, 11, 0));
-		System.out.println(p1.xTiles);
+		System.out.println(map.getTileId(28, 16, 1));
 	
 		boolean checkR = false, 
 				checkL = false,

@@ -82,7 +82,7 @@ public class Sprite extends Animation {
 	public void gravity(int delta, boolean[][] collision){
 		
 		if(collision[xTiles][yTiles] != true)
-		y = y + delta * 0.03f;
+		y = y + delta * 0.1f;
 		if(y   > 20 + lastY){
 			yTiles +=1;
 			lastY = y ;
