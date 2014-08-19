@@ -99,8 +99,10 @@ public class Claymore extends BasicGame {
 			p1.spriteAnimation();
 	
 		dog2.motion(delta, p1);
-		if(p1.anim.getFrame() == 9){
-			p1.anim = p1.stand;
+		// check to see that attack is currently set, and that it is at end of animation.
+		if(p1.anim == p1.attack && p1.anim.getFrame() == 9){
+			p1.anim.setCurrentFrame(0); // reset the attack animation (otherwise, it's from would always be 9, and stand would get set again and again).
+			p1.anim = p1.stand; // set the player back to stand.
 		}
 		System.out.println(p1.anim.getFrame());
 		

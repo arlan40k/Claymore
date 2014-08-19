@@ -83,13 +83,6 @@ public class Sprite extends Animation {
 	
 	public void spriteAnimation(){
 		anim = attack;
-		
-			
-		
-		
-		
-		
-		
 	}
 	
 	public void gravity(int delta, boolean[][] collision){
