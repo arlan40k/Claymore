@@ -10,14 +10,12 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.SpriteSheet;
 import org.newdawn.slick.tiled.TiledMap;
 
-// Jonathan was here!
-public class Claymore extends BasicGame {
-	Image background; 
+
+public class Claymore extends BasicGame { 
 	TiledMap map;
-	int mapTile[][] = new int[99][30];
 	boolean collision[][] = new boolean[99][30];
 	
-	Sprite p1 = new Sprite(100, 0) ;
+	Sprite p1;
 	YomaDog dog2;
 	
 	public Claymore() {
@@ -44,50 +42,40 @@ public class Claymore extends BasicGame {
 
 	@Override
 	public void render(GameContainer container, Graphics g) throws SlickException {
+
+		map.render(0, 0 , (int)p1.bg_x, 0, 100, 30);
 	
-		//THIS TOOK WAY TO LONG JJ!!!!! Errg I hate programming lol, but I refuse to lose!
-		map.render(0, 0 , 0, 0, 100, 30);
-	
-		p1.spriteAnimation.draw(p1.x , p1.y);
+		p1.anim.draw(p1.x , p1.y);
 		dog2.anim.draw(dog2.x,dog2.y);
 	}
 		
 	@Override
 	public void init(GameContainer container) throws SlickException {
 		map = new  TiledMap("Backgrounds/BG.tmx");	
-		p1.sprite[0] = new Image("Sprites/StandAni1.png");
-		p1.sprite[1] = new Image("Sprites/StandAni2.png");
-		p1.sprite[2] = new Image("Sprites/StandAni3.png");
-		p1.sprite[3] = new Image("Sprites/StandAni4.png");
-		p1.sprite[4] = new Image("Sprites/StandAni5.png");
-		p1.sprite[5] = new Image("Sprites/StandAni5.png");
-		p1.spriteAnimation = new Animation(p1.sprite, 1000);
+		p1 = new Sprite();
+	
 		dog2 = new YomaDog();
 		for(int indexX = 0; indexX < 100; indexX++){
 		for(int indexY = 0; indexY < 30; indexY++){
-		if(map.getTileId(indexX, indexY, 0) == 3894  )
+		if(map.getTileId(indexX, indexY, 1) ==  3894  )
 			collision[indexX][indexY] = true;
 			
 			
 		}
-		}
+	}
 		
 
-	}
+}
 	
  
 	@Override
 	public void update(GameContainer container, int delta) throws SlickException {
-		//p1.update(delta);
-		//System.out.println(getTileProperty())
-		//System.out.println(map.getTileId(27, 11, 0));
-		System.out.println(map.getTileId(28, 16, 1));
-	
+		
 		boolean checkR = false, 
 				checkL = false,
 				checkUp = false;
 		Input input = container.getInput();
-		
+		//Start of Movement Commands for Player
 		if(input.isKeyDown(Input.KEY_RIGHT)){
 			checkR = true;
 			p1.Motion(delta, checkR, checkL, checkUp, collision);
@@ -95,25 +83,27 @@ public class Claymore extends BasicGame {
 		if(input.isKeyDown(Input.KEY_LEFT)){
 			checkL = true;
 			p1.Motion(delta, checkR, checkL, checkUp, collision);
-		}
-			//System.out.println(map.getTileId(27,10,1));
-			
-			
+		}	
 			
 			p1.gravity(delta, collision);
 		
 		if(input.isKeyDown(Input.KEY_UP)){
 			checkUp = true;
 			p1.Motion(delta, checkR, checkL, checkUp, collision);
+			
 		}
-		/*
-		if(input.isKeyDown(input.KEY_DOWN)){
-			checkLR = false;
-			p1.Motion(delta, checkLR, checkUD);
-		}
-		*/
+		//End of movement Commands for Player
 		
-
+		//Start of Attack Commands for Player
+		if(input.isKeyDown(Input.KEY_Q))
+			p1.spriteAnimation();
+	
+		dog2.motion(delta, p1);
+		if(p1.anim.getFrame() == 9){
+			p1.anim = p1.stand;
+		}
+		System.out.println(p1.anim.getFrame());
+		
 		
 	}
 
